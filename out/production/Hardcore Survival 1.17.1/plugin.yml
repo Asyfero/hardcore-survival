@@ -1,0 +1,12 @@
+name: HardcoreSurvival
+version: 0.1
+api-version: 1.17
+author: Asyfero
+main: fr.asyfero.plugin.Main
+commands:
+  start:
+    description: Start the survival
+    usage: /<command>
+  quit:
+    description: Quit the Map
+    usage: /<command>
