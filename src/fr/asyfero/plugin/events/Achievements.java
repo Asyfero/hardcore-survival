@@ -15,8 +15,10 @@ public class Achievements implements Listener {
     int rock = 1;
     int coal = 1;
     int iron = 1;
+    int is = 1;
     int gold = 1;
     int diamond = 1;
+    int ds = 1;
     int obsidian = 1;
 
     @EventHandler
@@ -81,9 +83,32 @@ public class Achievements implements Listener {
             }
             if (iron == 1) {
                 if (m == Material.IRON_INGOT) {
-                    Bukkit.broadcastMessage(pL + " §eIron §6achievement was done§f! §6Next Achievement§f: §eGold");
+                    Bukkit.broadcastMessage(pL + " §eIron §6achievement was done§f! §6Next Achievement§f: §eGold§f; §6Facultative Achievement§f: §bIron Stuff");
 
                     iron = 0;
+                    return;
+                }
+            }
+            if (ds == 1) {
+                if (m == Material.IRON_HELMET) {
+                    Bukkit.broadcastMessage(pL + " §bIron Stuff §6achievement was done§f! §6Next Achievement§f: §eGold");
+
+                    ds = 0;
+                    return;
+                } else if (m == Material.IRON_CHESTPLATE) {
+                    Bukkit.broadcastMessage(pL + " §bIron Stuff §6achievement was done§f! §6Next Achievement§f: §eGold");
+
+                    ds = 0;
+                    return;
+                } else if (m == Material.IRON_LEGGINGS) {
+                    Bukkit.broadcastMessage(pL + " §bIron Stuff §6achievement was done§f! §6Next Achievement§f: §eGold");
+
+                    ds = 0;
+                    return;
+                } else if (m == Material.IRON_BOOTS) {
+                    Bukkit.broadcastMessage(pL + " §bIron Stuff §6achievement was done§f! §6Next Achievement§f: §eGold");
+
+                    ds = 0;
                     return;
                 }
             }
@@ -97,10 +122,54 @@ public class Achievements implements Listener {
             }
             if (diamond == 1) {
                 if (m == Material.DIAMOND) {
-                    Bukkit.broadcastMessage(pL + " §eDiamond §6achievement was done§f! §6Next Achievement§f: §cObsidian");
+                    Bukkit.broadcastMessage(pL + " §bDiamond §6achievement was done§f! §6Next Achievement§f: §cObsidian§f; §6Facultative Achievement§f: §bDiamond Stuff");
 
                     diamond = 0;
                     return;
+                }
+            }
+            if (ds == 1) {
+                if (m == Material.DIAMOND_HELMET) {
+                    Bukkit.broadcastMessage(pL + " §bDiamond Stuff §6achievement was done§f! §6Next Achievement§f: §cObsidian");
+
+                    ds = 0;
+                    return;
+                } else if (m == Material.DIAMOND_CHESTPLATE) {
+                    Bukkit.broadcastMessage(pL + " §bDiamond Stuff §6achievement was done§f! §6Next Achievement§f: §cObsidian");
+
+                    ds = 0;
+                    return;
+                } else if (m == Material.DIAMOND_LEGGINGS) {
+                    Bukkit.broadcastMessage(pL + " §bDiamond Stuff §6achievement was done§f! §6Next Achievement§f: §cObsidian");
+
+                    ds = 0;
+                    return;
+                } else if (m == Material.DIAMOND_BOOTS) {
+                    Bukkit.broadcastMessage(pL + " §bDiamond Stuff §6achievement was done§f! §6Next Achievement§f: §cObsidian");
+
+                    ds = 0;
+                    return;
+                }
+            }
+            if (obsidian == 1) {
+                if (m == Material.OBSIDIAN) {
+                    Bukkit.broadcastMessage(pL + " §cObsidian §6achievement was done§f! §eYou Win§f!");
+
+                    wood = 1;
+                    rock = 1;
+                    coal = 1;
+                    iron = 1;
+                    gold = 1;
+                    diamond = 1;
+                    obsidian = 1;
+
+                    int y = Bukkit.getWorld("world").getHighestBlockYAt(0,0);
+
+                    for(Player p: Bukkit.getOnlinePlayers()) {
+                        p.teleport(new Location(Bukkit.getWorld("world"), 0, y, 0));
+
+                        WorldReset.deleteWorld("hardcoreWorld");
+                    }
                 }
             }
             if (obsidian == 1) {

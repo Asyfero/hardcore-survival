@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="hardcore-survival-V0.2">
+    <output-path>$PROJECT_DIR$/out/artifacts/hardcore_survival_V0_2</output-path>
+    <root id="archive" name="hardcore-survival-V0.2.jar">
+      <element id="module-output" name="Hardcore Survival 1.17.1" />
+    </root>
+  </artifact>
+</component>
